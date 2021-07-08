@@ -1,0 +1,75 @@
+@import "https://fonts.googleapis.com/css2?family=Crimson+Pro&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap";
+body {
+  margin: 0px 20px 0px 20px;
+  background-color: #b5eaea; }
+
+abbr {
+  color: #cf0931; }
+  abbr a:link {
+    color: #802a80; }
+
+a:link {
+  color: #802a80; }
+
+a:hover {
+  opacity: 0.8;
+  color: #c97dc5; }
+
+.page-wrapper {
+  font-family: Noto Sans;
+  position: relative;
+  padding: 0 300px 0 50px;
+  margin: 0; }
+
+header {
+  color: #493333;
+  font-size: 2em;
+  font-family: Crimson Pro;
+  background: url("https://media.giphy.com/media/xTVRxbCXTyqLZZ1C1Y/giphy.gif") bottom right no-repeat;
+  background-size: 250px 170px; }
+
+.preamble,
+.explanation {
+  float: left;
+  width: 45%;
+  padding: 13px;
+  display: block; }
+
+h3 {
+  color: #912a2a;
+  font-size: 1.5em; }
+
+.sidebar {
+  font-size: 16px;
+  margin-right: 40px;
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .sidebar li {
+    margin: 15px 0; }
+  .sidebar .wrapper {
+    background-color: #ffbcbc;
+    padding: 10px;
+    margin-top: 100px;
+    width: 220px;
+    height: 100%;
+    border: 5px solid #f38ba0;
+    border-radius: 12px; }
+  .sidebar .designer-name {
+    display: block; }
+
+footer {
+  clear: both;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  border: 5px solid #86b9b9;
+  border-radius: 12px; }
+  footer a {
+    color: black;
+    font-size: 1.3em;
+    padding: 15px;
+    margin: 0px 15px; }
+
+/*# sourceMappingURL=style.css.map */
