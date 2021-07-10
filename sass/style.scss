@@ -1,17 +1,23 @@
-@import "https://fonts.googleapis.com/css2?family=Crimson+Pro&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Crimson+Pro|Otomanopee+One|Nanum+Brush+Script&display=swap";
 @import "https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap";
 
 $header-font-family: Crimson Pro;
-$content-font-family: Noto Sans;
+$h3-font-family: Noto Sans;
+$content-font-family: Comic Neue;
+$summary-font-family: Nanum Brush Script;
 
 $primary-color: #b5eaea;
 $sidebar-color: #ffbcbc;
 $footer-color: #86b9b9;
+$content-background-color: #a1dada;
 
 $header-font-color: #493333;
 $h3-font-color: rgb(145, 42, 42);
 
 $header-font-size: 2em;
+$summary-font-size: 2em;
 $sidebar-font-size: 16px;
 $h3-font-size: 1.5em;
 $footer-font-size: 1.3em;
@@ -23,12 +29,13 @@ body {
   background-color: $primary-color;
 }
 
+h3 {
+  color: $h3-font-color;
+  font-size: $h3-font-size;
+}
+
 abbr {
   color: #cf0931;
-
-  a:link {
-    color: rgb(128, 42, 128);
-  }
 }
 
 a:link {
@@ -41,10 +48,22 @@ a:hover {
 }
 
 .page-wrapper {
-  font-family: $content-font-family;
+  font-family: $h3-font-family;
   position: relative;
   padding: 0 300px 0 50px;
   margin: 0;
+
+  .summary {
+    font-family: $summary-font-family;
+    font-size: 1.6em;
+    padding: 10px;
+    border-radius: $border-radius;
+  }
+
+  ::selection {
+    color: blue;
+    background: lightyellow;
+  }
 }
 
 header {
@@ -54,6 +73,16 @@ header {
   background: url("https://media.giphy.com/media/xTVRxbCXTyqLZZ1C1Y/giphy.gif")
     bottom right no-repeat;
   background-size: 250px 170px;
+  :not(abbr) {
+    text-shadow: 2px 2px #a1a1a1;
+  }
+}
+
+.preamble abbr:hover:after,
+.supporting abbr:hover:after,
+.requirements abbr:hover:after {
+  content: " (" attr(title) ")";
+  text-shadow: 0 0 1em #dd3b2a;
 }
 
 .preamble,
@@ -62,14 +91,60 @@ header {
   width: 45%;
   padding: 13px;
   display: block;
+  background-color: $content-background-color;
+  border-radius: $border-radius;
+  margin: 10px;
+  box-shadow: 5px 10px #a5a5a5;
+
+  h3:after {
+    background-color: #dd3b2a;
+    content: "";
+    height: 5px;
+    left: 0;
+    margin-top: -3px;
+    position: absolute;
+    width: 85%;
+    z-index: -1;
+  }
 }
 
-h3 {
-  color: $h3-font-color;
-  font-size: $h3-font-size;
+.explanation {
+  p::after {
+    background-color: #dd3b2a;
+    content: "";
+    height: 70px;
+    left: 50;
+    margin-top: -3px;
+    position: absolute;
+    width: 15px;
+    z-index: -1;
+  }
+}
+
+.participation,
+.benefits,
+.requirements {
+  padding: 13px;
+  background-color: $content-background-color;
+  border-radius: $border-radius;
+  display: inline-block;
+  margin: 10px;
+  box-shadow: 5px 10px #a5a5a5;
+
+  p:after {
+    background-color: #dd3b2a;
+    content: "";
+    height: 70px;
+    left: 50;
+    margin-top: -3px;
+    position: absolute;
+    width: 15px;
+    z-index: -1;
+  }
 }
 
 .sidebar {
+  font-family: $content-font-family;
   font-size: $sidebar-font-size;
   margin-right: 40px;
   position: absolute;
@@ -99,10 +174,14 @@ footer {
   clear: both;
   padding: 20px;
   width: 100%;
-  // background-color: $footer-color;
   text-align: center;
   border: 5px solid $footer-color;
   border-radius: $border-radius;
+  background: url("https://media.giphy.com/media/kGWbfX0Mn0ync56QbQ/giphy.gif"),
+    url("https://media.giphy.com/media/YoK8z93nCV0O6VraV5/giphy.gif") left;
+  background-position: bottom left, bottom right;
+  background-repeat: no-repeat;
+  background-size: 100px;
 
   a {
     color: black;

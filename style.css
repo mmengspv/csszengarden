@@ -1,13 +1,17 @@
-@import "https://fonts.googleapis.com/css2?family=Crimson+Pro&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Crimson+Pro|Otomanopee+One|Nanum+Brush+Script&display=swap";
 @import "https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap";
 body {
   margin: 0px 20px 0px 20px;
   background-color: #b5eaea; }
 
+h3 {
+  color: #912a2a;
+  font-size: 1.5em; }
+
 abbr {
   color: #cf0931; }
-  abbr a:link {
-    color: #802a80; }
 
 a:link {
   color: #802a80; }
@@ -21,6 +25,14 @@ a:hover {
   position: relative;
   padding: 0 300px 0 50px;
   margin: 0; }
+  .page-wrapper .summary {
+    font-family: Nanum Brush Script;
+    font-size: 1.6em;
+    padding: 10px;
+    border-radius: 12px; }
+  .page-wrapper ::selection {
+    color: blue;
+    background: lightyellow; }
 
 header {
   color: #493333;
@@ -28,19 +40,69 @@ header {
   font-family: Crimson Pro;
   background: url("https://media.giphy.com/media/xTVRxbCXTyqLZZ1C1Y/giphy.gif") bottom right no-repeat;
   background-size: 250px 170px; }
+  header :not(abbr) {
+    text-shadow: 2px 2px #a1a1a1; }
+
+.preamble abbr:hover:after,
+.supporting abbr:hover:after,
+.requirements abbr:hover:after {
+  content: " (" attr(title) ")";
+  text-shadow: 0 0 1em #dd3b2a; }
 
 .preamble,
 .explanation {
   float: left;
   width: 45%;
   padding: 13px;
-  display: block; }
+  display: block;
+  background-color: #a1dada;
+  border-radius: 12px;
+  margin: 10px;
+  box-shadow: 5px 10px #a5a5a5; }
+  .preamble h3:after,
+  .explanation h3:after {
+    background-color: #dd3b2a;
+    content: "";
+    height: 5px;
+    left: 0;
+    margin-top: -3px;
+    position: absolute;
+    width: 85%;
+    z-index: -1; }
 
-h3 {
-  color: #912a2a;
-  font-size: 1.5em; }
+.explanation p::after {
+  background-color: #dd3b2a;
+  content: "";
+  height: 70px;
+  left: 50;
+  margin-top: -3px;
+  position: absolute;
+  width: 15px;
+  z-index: -1; }
+
+.participation,
+.benefits,
+.requirements {
+  padding: 13px;
+  background-color: #a1dada;
+  border-radius: 12px;
+  display: inline-block;
+  margin: 10px;
+  box-shadow: 5px 10px #a5a5a5; }
+  .participation p:after,
+  .benefits p:after,
+  .requirements p:after {
+    background-color: #dd3b2a;
+    content: "";
+    height: 70px;
+    left: 50;
+    margin-top: -3px;
+    position: absolute;
+    width: 15px;
+    z-index: -1; }
 
 .sidebar {
+  font-family: Comic Neue;
   font-size: 16px;
   margin-right: 40px;
   position: absolute;
@@ -65,7 +127,11 @@ footer {
   width: 100%;
   text-align: center;
   border: 5px solid #86b9b9;
-  border-radius: 12px; }
+  border-radius: 12px;
+  background: url("https://media.giphy.com/media/kGWbfX0Mn0ync56QbQ/giphy.gif"), url("https://media.giphy.com/media/YoK8z93nCV0O6VraV5/giphy.gif") left;
+  background-position: bottom left, bottom right;
+  background-repeat: no-repeat;
+  background-size: 100px; }
   footer a {
     color: black;
     font-size: 1.3em;
